@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_new_app/app/route/app_route.dart';
 
 
 void main(){
@@ -10,9 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: "Test for Api",
+      title: "Test",
+      themeMode: ThemeMode.system,
+      routerConfig: AppRouter.appRouter,
     );
   }
 }
