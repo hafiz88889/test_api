@@ -1,5 +1,5 @@
 
-class PerosnComboboxModel {
+class PersonComboboxModel {
   String? _code;
   String? _name;
   int? _genderId;
@@ -28,7 +28,7 @@ class PerosnComboboxModel {
   int? _creatorUserId;
   int? _id;
 
-  PerosnComboboxModel(
+  PersonComboboxModel(
       {String? code,
         String? name,
         int? genderId,
@@ -198,7 +198,7 @@ class PerosnComboboxModel {
   int? get id => _id;
   set id(int? id) => _id = id;
 
-  PerosnComboboxModel.fromJson(Map<String, dynamic> json) {
+  PersonComboboxModel.fromJson(Map<String, dynamic> json) {
     _code = json['code'];
     _name = json['name'];
     _genderId = json['genderId'];

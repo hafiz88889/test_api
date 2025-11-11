@@ -32,7 +32,7 @@ class SubmitBuilding extends BuildingEvent{
 
 class EditBuilding extends BuildingEvent{
 final int id;
-final Function(BuildingForEdit buildingForEdit, List<PerosnComboboxModel> personList)getInitialData;
+final Function(BuildingForEdit buildingForEdit, List<PersonComboboxModel> personList)getInitialData;
 
 EditBuilding({required this.getInitialData, required this.id});
 
