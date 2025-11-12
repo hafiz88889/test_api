@@ -7,9 +7,9 @@ import '../model/person_combobox_model.dart';
 abstract class BuildingEvent extends Equatable{}
 
 class LoadBuilding extends BuildingEvent{
-  final RequestBody requestBody;
+  final RequestBody? requestBody;
 
-  LoadBuilding({required this.requestBody});
+  LoadBuilding({ this.requestBody});
 
   @override
   // TODO: implement props
