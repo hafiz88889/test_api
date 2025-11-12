@@ -6,6 +6,7 @@ abstract class Routes{
   static const HOME_SCREEN = _paths.HOME_SCREEN;
   static const LOGIN_SCREEN = _paths.LOGIN_SCREEN;
   static const REG_SCREEN = _paths.REG_SCREEN;
+  static const BUILDING_SCREEN = _paths.BUILDING_SCREEN;
 }
 
 
@@ -17,4 +18,5 @@ abstract class _paths{
   static const HOME_SCREEN='/home_screen';
   static const LOGIN_SCREEN ='/login_screen';
   static const REG_SCREEN='/reg_screen';
+  static const BUILDING_SCREEN='/building_screen';
 }
