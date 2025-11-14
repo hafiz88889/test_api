@@ -5,23 +5,23 @@ import 'package:test_new_app/app/main/core/constants/app_constant.dart';
 import 'package:test_new_app/app/main/core/model/common_response_object.dart';
 import 'package:test_new_app/app/main/core/model/request_body.dart';
 import 'package:test_new_app/app/main/core/services/custom_http_client.dart';
-import 'package:test_new_app/app/main/module/splash_screen/model/building_model.dart';
-import 'package:test_new_app/app/main/module/splash_screen/services/building_services.dart';
 
 import '../../../core/model/base_result_model.dart';
+import '../model/building_model.dart';
+import '../services/building_services.dart';
 import 'building_event.dart' show BuildingEvent, LoadBuilding;
 import 'building_state.dart';
 
 class BuildingBloc extends Bloc<BuildingEvent, BuildingState>{
   BuildingServices buildingServices= BuildingServices(
       httpClient: CustomHttpClient() ,
-      uri: "${AppConstant.Base_Api_Url}/services/app/building",
+      uri: "${AppConstant.Base_Api_Url}/services/app/building/",
   );
   BuildingBloc() : super(BuildingState()) {
     on<LoadBuilding>((event, emit) async {
       emit(state.copyWith(buildingStatus: BuildingStatus.loading));
       try{
-        CommonResponseObject<Result<BuildingModel>> responseObject= await buildingServices.getPageableData(endpoint: "GetBuilding", requestBody:event.requestBody , fromJsonT: (json)=>BuildingModel.fromJson(json));
+        CommonResponseObject<Result<BuildingModel>> responseObject= await buildingServices.getPageableData(endpoint:"GetBuilding", requestBody:event.requestBody , fromJsonT: (json)=>BuildingModel.fromJson(json));
         emit(state.copyWith(
           buildingStatus: BuildingStatus.success,
           buildingList:  responseObject.result?.itemList??[],

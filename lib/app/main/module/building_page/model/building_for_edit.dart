@@ -1,6 +1,7 @@
 
 
-import 'package:test_new_app/app/main/module/splash_screen/model/building_model.dart';
+
+import 'building_model.dart';
 
 class BuildingForEdit {
   BuildingModel? _building;

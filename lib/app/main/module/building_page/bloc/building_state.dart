@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:test_new_app/app/main/core/model/request_body.dart';
-import 'package:test_new_app/app/main/module/splash_screen/model/building_model.dart';
 
+import '../model/building_model.dart';
 import '../model/person_combobox_model.dart';
 
 enum BuildingStatus {initial, loading, success, error, onData}
