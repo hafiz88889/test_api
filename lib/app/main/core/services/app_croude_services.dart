@@ -11,11 +11,10 @@ final CustomHttpClient httpClient;
 final String uri;
 AppCrudServices({required this.httpClient, required this.uri});
 
-Future <CommonResponseObject<Result<T>>> getPageableData({required String endpoint , required RequestBody requestBody, required T Function(Map<String, dynamic>) fromJsonT}) async{
-  final response = await httpClient.post(uri: "$uri$endpoint", data: requestBody.toJson(),token:  await SharedPreferenceHelper.getToken());
-  debugPrint("Pageable Respone : $response");
-  return CommonResponseObject<Result<T>>.fromJson(response, (resultJson)=> Result.fromJson(resultJson, fromJsonT));
+Future<CommonResponseObject<Result<T>>> getPageableData({required String endpoint, required RequestBody requestBody,required T Function(Map<String, dynamic>) fromJsonT}) async{
+  final response = await httpClient.post(uri: "$uri$endpoint", data: requestBody.toJson(),token: await SharedPreferenceHelper.getToken());
+  debugPrint("Pageable Response : $response");
+  return CommonResponseObject<Result<T>>.fromJson(response, (resultJson) => Result.fromJson(resultJson, fromJsonT),);
 }
-
 
 }

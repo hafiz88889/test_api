@@ -3,10 +3,10 @@ import 'package:test_new_app/app/main/core/model/common_response_list.dart';
 import 'package:test_new_app/app/main/core/model/common_response_object.dart';
 import 'package:test_new_app/app/main/core/services/custom_http_client.dart';
 import 'package:test_new_app/app/main/module/building_page/model/person_combobox_model.dart';
-import 'package:test_new_app/app/main/module/splash_screen/model/building_for_edit.dart';
 import 'package:test_new_app/app/utils/shared_prefference_helper.dart';
 
 import '../../../core/services/app_croude_services.dart';
+import '../model/building_for_edit.dart';
 import '../model/building_model.dart';
 
 class BuildingServices extends AppCrudServices<BuildingModel>{

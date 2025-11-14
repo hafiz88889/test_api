@@ -115,7 +115,7 @@ class BuildingPageView extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Text("${buildingModel.buildingName}"),
+                    //  Text("${buildingModel.buildingName}"),
                     ],
                   ),
                 );

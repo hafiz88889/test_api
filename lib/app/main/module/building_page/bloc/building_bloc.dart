@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:test_new_app/app/main/core/constants/app_constant.dart';
 import 'package:test_new_app/app/main/core/model/common_response_object.dart';
 import 'package:test_new_app/app/main/core/model/request_body.dart';
@@ -20,15 +21,16 @@ class BuildingBloc extends Bloc<BuildingEvent, BuildingState>{
   BuildingBloc() : super(BuildingState()) {
     on<LoadBuilding>((event, emit) async {
       emit(state.copyWith(buildingStatus: BuildingStatus.loading));
-      try{
-        CommonResponseObject<Result<BuildingModel>> responseObject= await buildingServices.getPageableData(endpoint:"GetBuilding", requestBody:event.requestBody , fromJsonT: (json)=>BuildingModel.fromJson(json));
+      try {
+        CommonResponseObject<Result<BuildingModel>> responseObject = await buildingServices.getPageableData(endpoint: "GetBuilding", requestBody: event.requestBody, fromJsonT: (json) => BuildingModel.fromJson(json),);
         emit(state.copyWith(
           buildingStatus: BuildingStatus.success,
-          buildingList:  responseObject.result?.itemList??[],
-          totalCount:  responseObject.result?.totalCount??0,
+          buildingList: responseObject.result?.itemList ?? [],
+          totalCount: responseObject.result?.totalCount??0,
           requestBody: event.requestBody,
-        ));
-      }catch (ex) {
+        ),
+        );
+      } catch (ex) {
         emit(state.copyWith(buildingStatus: BuildingStatus.error,error: ex.toString()));
       }
     });

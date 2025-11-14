@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:test_new_app/app/main/core/model/request_body.dart';
-import 'package:test_new_app/app/main/module/splash_screen/model/building_for_edit.dart';
 
+import '../model/building_for_edit.dart' show BuildingForEdit;
 import '../model/person_combobox_model.dart';
 
 abstract class BuildingEvent extends Equatable{}
