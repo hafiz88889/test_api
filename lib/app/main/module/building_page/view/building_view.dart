@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:test_new_app/app/main/module/splash_screen/bloc/building_event.dart';
 
 import '../../../core/model/request_body.dart';
-import '../../splash_screen/bloc/building_bloc.dart';
-import '../../splash_screen/bloc/building_state.dart';
-import '../../splash_screen/model/building_model.dart';
+import '../bloc/building_bloc.dart';
+import '../bloc/building_event.dart';
+import '../bloc/building_state.dart';
+import '../model/building_model.dart';
 
 
 class BuildingPageView extends StatelessWidget {
@@ -17,7 +17,7 @@ class BuildingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController searchController =TextEditingController();
     return Scaffold(
-      backgroundColor: Color(0xFF2D3748),
+      backgroundColor: Color(0xFFE3D1D1),
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(150),
           child: AppBar(
@@ -121,7 +121,7 @@ class BuildingPageView extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: state.buildingList?.length??0,
                       itemBuilder: (context, index) {
-                        BuildingModel buildingModel=state.buildingList![index];
+                        BuildingModel buildingModel=state.buildingList![index] as BuildingModel;
                         return Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 12,
