@@ -12,8 +12,8 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(child: Column(children: [
         ElevatedButton(onPressed: (){
-          context.go(Routes.BUILDING_SCREEN);
-        }, child: Text("Go BuildingPage"))
+          context.go(Routes.ELECTRIC_METER_READING);
+        }, child: Text("Go Electric Meter"))
       ],)),
     );
   }

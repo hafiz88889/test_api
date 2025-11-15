@@ -1,27 +1,26 @@
-
 class PersonComboboxModel {
   String? _code;
   String? _name;
   int? _genderId;
-  Null? _genderInfo;
+  int? _genderInfo;
   int? _religiousId;
-  Null? _religiousInfo;
+  int? _religiousInfo;
   int? _occupationId;
-  Null? _occupationInfo;
+  int? _occupationInfo;
   String? _contactNumber;
   String? _emmergiencyContactInformation;
   String? _permanentAddress;
   String? _email;
   String? _nidNo;
-  Null? _nidDocument;
+  String? _nidDocument;
   int? _seq;
   bool? _isOwner;
   String? _pictureId;
   bool? _isActive;
   int? _tenantId;
   bool? _isDeleted;
-  Null? _deleterUserId;
-  Null? _deletionTime;
+  int? _deleterUserId;
+  String? _deletionTime;
   String? _lastModificationTime;
   int? _lastModifierUserId;
   String? _creationTime;
@@ -32,25 +31,25 @@ class PersonComboboxModel {
       {String? code,
         String? name,
         int? genderId,
-        Null? genderInfo,
+        int? genderInfo,
         int? religiousId,
-        Null? religiousInfo,
+        int? religiousInfo,
         int? occupationId,
-        Null? occupationInfo,
+        int? occupationInfo,
         String? contactNumber,
         String? emmergiencyContactInformation,
         String? permanentAddress,
         String? email,
         String? nidNo,
-        Null? nidDocument,
+        String? nidDocument,
         int? seq,
         bool? isOwner,
         String? pictureId,
         bool? isActive,
         int? tenantId,
         bool? isDeleted,
-        Null? deleterUserId,
-        Null? deletionTime,
+        int? deleterUserId,
+        String? deletionTime,
         String? lastModificationTime,
         int? lastModifierUserId,
         String? creationTime,
@@ -145,16 +144,16 @@ class PersonComboboxModel {
   set name(String? name) => _name = name;
   int? get genderId => _genderId;
   set genderId(int? genderId) => _genderId = genderId;
-  Null? get genderInfo => _genderInfo;
-  set genderInfo(Null? genderInfo) => _genderInfo = genderInfo;
+  int? get genderInfo => _genderInfo;
+  set genderInfo(int? genderInfo) => _genderInfo = genderInfo;
   int? get religiousId => _religiousId;
   set religiousId(int? religiousId) => _religiousId = religiousId;
-  Null? get religiousInfo => _religiousInfo;
-  set religiousInfo(Null? religiousInfo) => _religiousInfo = religiousInfo;
+  int? get religiousInfo => _religiousInfo;
+  set religiousInfo(int? religiousInfo) => _religiousInfo = religiousInfo;
   int? get occupationId => _occupationId;
   set occupationId(int? occupationId) => _occupationId = occupationId;
-  Null? get occupationInfo => _occupationInfo;
-  set occupationInfo(Null? occupationInfo) => _occupationInfo = occupationInfo;
+  int? get occupationInfo => _occupationInfo;
+  set occupationInfo(int? occupationInfo) => _occupationInfo = occupationInfo;
   String? get contactNumber => _contactNumber;
   set contactNumber(String? contactNumber) => _contactNumber = contactNumber;
   String? get emmergiencyContactInformation => _emmergiencyContactInformation;
@@ -167,8 +166,8 @@ class PersonComboboxModel {
   set email(String? email) => _email = email;
   String? get nidNo => _nidNo;
   set nidNo(String? nidNo) => _nidNo = nidNo;
-  Null? get nidDocument => _nidDocument;
-  set nidDocument(Null? nidDocument) => _nidDocument = nidDocument;
+  String? get nidDocument => _nidDocument;
+  set nidDocument(String? nidDocument) => _nidDocument = nidDocument;
   int? get seq => _seq;
   set seq(int? seq) => _seq = seq;
   bool? get isOwner => _isOwner;
@@ -181,10 +180,10 @@ class PersonComboboxModel {
   set tenantId(int? tenantId) => _tenantId = tenantId;
   bool? get isDeleted => _isDeleted;
   set isDeleted(bool? isDeleted) => _isDeleted = isDeleted;
-  Null? get deleterUserId => _deleterUserId;
-  set deleterUserId(Null? deleterUserId) => _deleterUserId = deleterUserId;
-  Null? get deletionTime => _deletionTime;
-  set deletionTime(Null? deletionTime) => _deletionTime = deletionTime;
+  int? get deleterUserId => _deleterUserId;
+  set deleterUserId(int? deleterUserId) => _deleterUserId = deleterUserId;
+  String? get deletionTime => _deletionTime;
+  set deletionTime(String? deletionTime) => _deletionTime = deletionTime;
   String? get lastModificationTime => _lastModificationTime;
   set lastModificationTime(String? lastModificationTime) =>
       _lastModificationTime = lastModificationTime;

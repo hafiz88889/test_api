@@ -7,6 +7,7 @@ abstract class Routes{
   static const LOGIN_SCREEN = _paths.LOGIN_SCREEN;
   static const REG_SCREEN = _paths.REG_SCREEN;
   static const BUILDING_SCREEN = _paths.BUILDING_SCREEN;
+  static const ELECTRIC_METER_READING = _paths.ELECTRIC_METER_READING;
 }
 
 
@@ -19,4 +20,5 @@ abstract class _paths{
   static const LOGIN_SCREEN ='/login_screen';
   static const REG_SCREEN='/reg_screen';
   static const BUILDING_SCREEN='/building_screen';
+  static const ELECTRIC_METER_READING='/electric_meter_reading';
 }

@@ -9,20 +9,21 @@ import '../../../core/services/app_croude_services.dart';
 import '../model/building_for_edit.dart';
 import '../model/building_model.dart';
 
-class BuildingServices extends AppCrudServices<BuildingModel>{
-  final CustomHttpClient httpClient;
-  final String uri;
-  BuildingServices({required this.httpClient, required this.uri}):super(httpClient: httpClient, uri: uri);
+class BuildingService extends AppCrudService<BuildingModel> {
+  final CustomHttpClient http;
+  final String url;
+  BuildingService({required this.http, required this.url,}) : super(httpClient: http, uri: url);
 
-  Future<CommonResponseObject<BuildingForEdit>>getBuildingForEdit ({required int id})async{
-    final response= await httpClient.post(uri: "${uri}GetBuildingForEdit", data: {"id":id},token:  await SharedPreferenceHelper.getToken());
-    debugPrint("Building Response${response}");
-    return CommonResponseObject<BuildingForEdit>.fromJson(response,(resultJson)=>BuildingForEdit.fromJson(resultJson));
+  Future<CommonResponseObject<BuildingForEdit>> getBuildingForEdit({required int id}) async{
+    final response = await httpClient.post(uri: "${url}GetBuildingForEdit", data: {"id":id},token: await SharedPreferenceHelper.getToken());
+    debugPrint("BUILDIN RESPONSE : ${response}");
+    return CommonResponseObject<BuildingForEdit>.fromJson(response,(resultJson) => BuildingForEdit.fromJson(resultJson));
   }
 
-  Future<CommonResponseList<PersonComboboxModel>> getPersonComboboxList()async{
-    final response= await httpClient.post(uri: "${uri}GetPersonListForCombobox", data: {},token: await SharedPreferenceHelper.getToken());
-    debugPrint("${response}");
-    return CommonResponseList<PersonComboboxModel>.fromJson(response,(resultJson)=>PersonComboboxModel.fromJson(resultJson));
+  Future<CommonResponseList<PersonComboboxModel>> getPersonListForCombobox() async{
+    final response = await httpClient.post(uri: "${url}GetPersonListForCombobox", data: {},token: await SharedPreferenceHelper.getToken());
+    print(response);
+    return CommonResponseList<PersonComboboxModel>.fromJson(response,(resultJson) => PersonComboboxModel.fromJson(resultJson));
   }
+
 }

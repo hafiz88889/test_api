@@ -13,16 +13,17 @@ import '../services/building_services.dart';
 import 'building_event.dart' show BuildingEvent, LoadBuilding;
 import 'building_state.dart';
 
-class BuildingBloc extends Bloc<BuildingEvent, BuildingState>{
-  BuildingServices buildingServices= BuildingServices(
-      httpClient: CustomHttpClient() ,
-      uri: "${AppConstant.Base_Api_Url}/services/app/building/",
+class BuildingBloc extends Bloc<BuildingEvent, BuildingState> {
+  BuildingService buildingService = BuildingService(
+    http: CustomHttpClient(),
+    url: "${AppConstant.Base_Api_Url}/services/app/building/",
   );
+
   BuildingBloc() : super(BuildingState()) {
     on<LoadBuilding>((event, emit) async {
       emit(state.copyWith(buildingStatus: BuildingStatus.loading));
       try {
-        CommonResponseObject<Result<BuildingModel>> responseObject = await buildingServices.getPageableData(endpoint: "GetBuilding", requestBody: event.requestBody, fromJsonT: (json) => BuildingModel.fromJson(json),);
+        CommonResponseObject<Result<BuildingModel>> responseObject = await buildingService.getPageableData(endpoint: "GetBuilding", requestBody: event.requestBody, fromJsonT: (json) => BuildingModel.fromJson(json),);
         emit(state.copyWith(
           buildingStatus: BuildingStatus.success,
           buildingList: responseObject.result?.itemList ?? [],
@@ -34,7 +35,6 @@ class BuildingBloc extends Bloc<BuildingEvent, BuildingState>{
         emit(state.copyWith(buildingStatus: BuildingStatus.error,error: ex.toString()));
       }
     });
-
 
 
   }

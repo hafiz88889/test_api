@@ -1,24 +1,22 @@
 import 'package:equatable/equatable.dart';
-import 'package:test_new_app/app/main/core/model/request_body.dart';
 
+import '../../../core/model/request_body.dart';
 import '../model/building_model.dart';
-import '../model/person_combobox_model.dart';
 
-enum BuildingStatus {initial, loading, success, error, onData}
-
+enum BuildingStatus {initial,loading,success,error,onData}
 class BuildingState extends Equatable{
   final BuildingStatus buildingStatus;
-  final List<BuildingModel>? buildingList;
+  final List<BuildingModel>?buildingList;
   final RequestBody? requestBody;
   final int? totalCount;
   final String? error;
 
-  BuildingState({this.buildingStatus=BuildingStatus.initial,
-    this.requestBody,
-    this.error,
+  const BuildingState({this.buildingStatus = BuildingStatus.initial,
     this.buildingList,
-    this.totalCount
-  });
+    this.requestBody,
+    this.totalCount,
+    this.error});
+
   BuildingState copyWith({
     BuildingStatus? buildingStatus,
     List<BuildingModel>? buildingList,

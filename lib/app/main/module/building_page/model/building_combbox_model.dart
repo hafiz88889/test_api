@@ -1,29 +1,41 @@
-class CreateBuildingModel {
+class BuildingComboboxModel {
   String? _code;
   String? _buildingName;
   int? _ownerId;
+  Null? _ownerInfo;
   String? _address;
   int? _seq;
-  int? _contactNumber;
+  String? _contactNumber;
   String? _email;
   int? _area;
   bool? _isActive;
   int? _tenantId;
+  bool? _isDeleted;
+  Null? _deleterUserId;
+  Null? _deletionTime;
+  Null? _lastModificationTime;
+  Null? _lastModifierUserId;
   String? _creationTime;
   int? _creatorUserId;
   int? _id;
 
-  CreateBuildingModel(
+  BuildingComboboxModel(
       {String? code,
         String? buildingName,
         int? ownerId,
+        Null? ownerInfo,
         String? address,
         int? seq,
-        int? contactNumber,
+        String? contactNumber,
         String? email,
         int? area,
         bool? isActive,
         int? tenantId,
+        bool? isDeleted,
+        Null? deleterUserId,
+        Null? deletionTime,
+        Null? lastModificationTime,
+        Null? lastModifierUserId,
         String? creationTime,
         int? creatorUserId,
         int? id}) {
@@ -35,6 +47,9 @@ class CreateBuildingModel {
     }
     if (ownerId != null) {
       this._ownerId = ownerId;
+    }
+    if (ownerInfo != null) {
+      this._ownerInfo = ownerInfo;
     }
     if (address != null) {
       this._address = address;
@@ -57,6 +72,21 @@ class CreateBuildingModel {
     if (tenantId != null) {
       this._tenantId = tenantId;
     }
+    if (isDeleted != null) {
+      this._isDeleted = isDeleted;
+    }
+    if (deleterUserId != null) {
+      this._deleterUserId = deleterUserId;
+    }
+    if (deletionTime != null) {
+      this._deletionTime = deletionTime;
+    }
+    if (lastModificationTime != null) {
+      this._lastModificationTime = lastModificationTime;
+    }
+    if (lastModifierUserId != null) {
+      this._lastModifierUserId = lastModifierUserId;
+    }
     if (creationTime != null) {
       this._creationTime = creationTime;
     }
@@ -74,12 +104,14 @@ class CreateBuildingModel {
   set buildingName(String? buildingName) => _buildingName = buildingName;
   int? get ownerId => _ownerId;
   set ownerId(int? ownerId) => _ownerId = ownerId;
+  Null? get ownerInfo => _ownerInfo;
+  set ownerInfo(Null? ownerInfo) => _ownerInfo = ownerInfo;
   String? get address => _address;
   set address(String? address) => _address = address;
   int? get seq => _seq;
   set seq(int? seq) => _seq = seq;
-  int? get contactNumber => _contactNumber;
-  set contactNumber(int? contactNumber) => _contactNumber = contactNumber;
+  String? get contactNumber => _contactNumber;
+  set contactNumber(String? contactNumber) => _contactNumber = contactNumber;
   String? get email => _email;
   set email(String? email) => _email = email;
   int? get area => _area;
@@ -88,6 +120,18 @@ class CreateBuildingModel {
   set isActive(bool? isActive) => _isActive = isActive;
   int? get tenantId => _tenantId;
   set tenantId(int? tenantId) => _tenantId = tenantId;
+  bool? get isDeleted => _isDeleted;
+  set isDeleted(bool? isDeleted) => _isDeleted = isDeleted;
+  Null? get deleterUserId => _deleterUserId;
+  set deleterUserId(Null? deleterUserId) => _deleterUserId = deleterUserId;
+  Null? get deletionTime => _deletionTime;
+  set deletionTime(Null? deletionTime) => _deletionTime = deletionTime;
+  Null? get lastModificationTime => _lastModificationTime;
+  set lastModificationTime(Null? lastModificationTime) =>
+      _lastModificationTime = lastModificationTime;
+  Null? get lastModifierUserId => _lastModifierUserId;
+  set lastModifierUserId(Null? lastModifierUserId) =>
+      _lastModifierUserId = lastModifierUserId;
   String? get creationTime => _creationTime;
   set creationTime(String? creationTime) => _creationTime = creationTime;
   int? get creatorUserId => _creatorUserId;
@@ -95,10 +139,11 @@ class CreateBuildingModel {
   int? get id => _id;
   set id(int? id) => _id = id;
 
-  CreateBuildingModel.fromJson(Map<String, dynamic> json) {
+  BuildingComboboxModel.fromJson(Map<String, dynamic> json) {
     _code = json['code'];
     _buildingName = json['buildingName'];
     _ownerId = json['ownerId'];
+    _ownerInfo = json['ownerInfo'];
     _address = json['address'];
     _seq = json['seq'];
     _contactNumber = json['contactNumber'];
@@ -106,6 +151,11 @@ class CreateBuildingModel {
     _area = json['area'];
     _isActive = json['isActive'];
     _tenantId = json['tenantId'];
+    _isDeleted = json['isDeleted'];
+    _deleterUserId = json['deleterUserId'];
+    _deletionTime = json['deletionTime'];
+    _lastModificationTime = json['lastModificationTime'];
+    _lastModifierUserId = json['lastModifierUserId'];
     _creationTime = json['creationTime'];
     _creatorUserId = json['creatorUserId'];
     _id = json['id'];
@@ -116,6 +166,7 @@ class CreateBuildingModel {
     data['code'] = this._code;
     data['buildingName'] = this._buildingName;
     data['ownerId'] = this._ownerId;
+    data['ownerInfo'] = this._ownerInfo;
     data['address'] = this._address;
     data['seq'] = this._seq;
     data['contactNumber'] = this._contactNumber;
@@ -123,10 +174,14 @@ class CreateBuildingModel {
     data['area'] = this._area;
     data['isActive'] = this._isActive;
     data['tenantId'] = this._tenantId;
+    data['isDeleted'] = this._isDeleted;
+    data['deleterUserId'] = this._deleterUserId;
+    data['deletionTime'] = this._deletionTime;
+    data['lastModificationTime'] = this._lastModificationTime;
+    data['lastModifierUserId'] = this._lastModifierUserId;
     data['creationTime'] = this._creationTime;
     data['creatorUserId'] = this._creatorUserId;
     data['id'] = this._id;
     return data;
   }
 }
-

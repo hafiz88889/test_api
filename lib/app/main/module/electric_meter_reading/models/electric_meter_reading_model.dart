@@ -1,15 +1,16 @@
-class BuildingModel {
-  String? _code;
-  String? _buildingName;
-  int? _ownerId;
-  String? _ownerName;
-  String? _address;
-  int? _seq;
-  String? _contactNumber;
-  String? _email;
-  int? _area;
-  bool? _isActive;
+
+class ElectricMeterModel {
   int? _tenantId;
+  String? _readingDate;
+  String? _meterNumber;
+  double? _currentReading;
+  double? _previousReading;
+  double? _consumption;
+  double? _ratePerUnit;
+  double? _amount;
+  int? _seq;
+  bool? _isActive;
+  Null? _remarks;
   bool? _isDeleted;
   int? _deleterUserId;
   String? _deletionTime;
@@ -18,20 +19,19 @@ class BuildingModel {
   String? _creationTime;
   int? _creatorUserId;
   int? _id;
-  String? _permanentAddress;
 
-  BuildingModel(
-      {String? code,
-        String? buildingName,
-        int? ownerId,
-        String? ownerName,
-        String? address,
+  ElectricMeterModel(
+      {int? tenantId,
+        String? readingDate,
+        String? meterNumber,
+        double? currentReading,
+        double? previousReading,
+        double? consumption,
+        double? ratePerUnit,
+        double? amount,
         int? seq,
-        String? contactNumber,
-        String? email,
-        int? area,
         bool? isActive,
-        int? tenantId,
+        Null? remarks,
         bool? isDeleted,
         int? deleterUserId,
         String? deletionTime,
@@ -39,41 +39,39 @@ class BuildingModel {
         int? lastModifierUserId,
         String? creationTime,
         int? creatorUserId,
-        int? id,
-        String? permanentAddress,
-      }) {
-    if (code != null) {
-      this._code = code;
+        int? id}) {
+    if (tenantId != null) {
+      this._tenantId = tenantId;
     }
-    if (buildingName != null) {
-      this._buildingName = buildingName;
+    if (readingDate != null) {
+      this._readingDate = readingDate;
     }
-    if (ownerId != null) {
-      this._ownerId = ownerId;
+    if (meterNumber != null) {
+      this._meterNumber = meterNumber;
     }
-    if (ownerName != null) {
-      this._ownerName = ownerName;
+    if (currentReading != null) {
+      this._currentReading = currentReading;
     }
-    if (address != null) {
-      this._address = address;
+    if (previousReading != null) {
+      this._previousReading = previousReading;
+    }
+    if (consumption != null) {
+      this._consumption = consumption;
+    }
+    if (ratePerUnit != null) {
+      this._ratePerUnit = ratePerUnit;
+    }
+    if (amount != null) {
+      this._amount = amount;
     }
     if (seq != null) {
       this._seq = seq;
     }
-    if (contactNumber != null) {
-      this._contactNumber = contactNumber;
-    }
-    if (email != null) {
-      this._email = email;
-    }
-    if (area != null) {
-      this._area = area;
-    }
     if (isActive != null) {
       this._isActive = isActive;
     }
-    if (tenantId != null) {
-      this._tenantId = tenantId;
+    if (remarks != null) {
+      this._remarks = remarks;
     }
     if (isDeleted != null) {
       this._isDeleted = isDeleted;
@@ -99,33 +97,31 @@ class BuildingModel {
     if (id != null) {
       this._id = id;
     }
-    if(permanentAddress !=null){
-      this._permanentAddress=permanentAddress;
-    }
   }
 
-  String? get code => _code;
-  set code(String? code) => _code = code;
-  String? get buildingName => _buildingName;
-  set buildingName(String? buildingName) => _buildingName = buildingName;
-  int? get ownerId => _ownerId;
-  set ownerId(int? ownerId) => _ownerId = ownerId;
-  String? get ownerName => _ownerName;
-  set ownerName(String? ownerName) => _ownerName = ownerName;
-  String? get address => _address;
-  set address(String? address) => _address = address;
-  int? get seq => _seq;
-  set seq(int? seq) => _seq = seq;
-  String? get contactNumber => _contactNumber;
-  set contactNumber(String? contactNumber) => _contactNumber = contactNumber;
-  String? get email => _email;
-  set email(String? email) => _email = email;
-  int? get area => _area;
-  set area(int? area) => _area = area;
-  bool? get isActive => _isActive;
-  set isActive(bool? isActive) => _isActive = isActive;
   int? get tenantId => _tenantId;
   set tenantId(int? tenantId) => _tenantId = tenantId;
+  String? get readingDate => _readingDate;
+  set readingDate(String? readingDate) => _readingDate = readingDate;
+  String? get meterNumber => _meterNumber;
+  set meterNumber(String? meterNumber) => _meterNumber = meterNumber;
+  double? get currentReading => _currentReading;
+  set currentReading(double? currentReading) => _currentReading = currentReading;
+  double? get previousReading => _previousReading;
+  set previousReading(double? previousReading) =>
+      _previousReading = previousReading;
+  double? get consumption => _consumption;
+  set consumption(double? consumption) => _consumption = consumption;
+  double? get ratePerUnit => _ratePerUnit;
+  set ratePerUnit(double? ratePerUnit) => _ratePerUnit = ratePerUnit;
+  double? get amount => _amount;
+  set amount(double? amount) => _amount = amount;
+  int? get seq => _seq;
+  set seq(int? seq) => _seq = seq;
+  bool? get isActive => _isActive;
+  set isActive(bool? isActive) => _isActive = isActive;
+  Null? get remarks => _remarks;
+  set remarks(Null? remarks) => _remarks = remarks;
   bool? get isDeleted => _isDeleted;
   set isDeleted(bool? isDeleted) => _isDeleted = isDeleted;
   int? get deleterUserId => _deleterUserId;
@@ -144,21 +140,19 @@ class BuildingModel {
   set creatorUserId(int? creatorUserId) => _creatorUserId = creatorUserId;
   int? get id => _id;
   set id(int? id) => _id = id;
-  String?get permanentAddress=>_permanentAddress;
-  set permanentAddress(String? permanentAddress)=>_permanentAddress=permanentAddress;
 
-  BuildingModel.fromJson(Map<String, dynamic> json) {
-    _code = json['code'];
-    _buildingName = json['buildingName'];
-    _ownerId = json['ownerId'];
-    _ownerName = json['ownerName'];
-    _address = json['address'];
-    _seq = json['seq'];
-    _contactNumber = json['contactNumber'];
-    _email = json['email'];
-    _area = json['area'];
-    _isActive = json['isActive'];
+  ElectricMeterModel.fromJson(Map<String, dynamic> json) {
     _tenantId = json['tenantId'];
+    _readingDate = json['readingDate'];
+    _meterNumber = json['meterNumber'];
+    _currentReading = json['currentReading'];
+    _previousReading = json['previousReading'];
+    _consumption = json['consumption'];
+    _ratePerUnit = json['ratePerUnit'];
+    _amount = json['amount'];
+    _seq = json['seq'];
+    _isActive = json['isActive'];
+    _remarks = json['remarks'];
     _isDeleted = json['isDeleted'];
     _deleterUserId = json['deleterUserId'];
     _deletionTime = json['deletionTime'];
@@ -167,22 +161,21 @@ class BuildingModel {
     _creationTime = json['creationTime'];
     _creatorUserId = json['creatorUserId'];
     _id = json['id'];
-    _permanentAddress=json['permanentAddress'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this._code;
-    data['buildingName'] = this._buildingName;
-    data['ownerId'] = this._ownerId;
-    data['ownerName'] = this._ownerName;
-    data['address'] = this._address;
-    data['seq'] = this._seq;
-    data['contactNumber'] = this._contactNumber;
-    data['email'] = this._email;
-    data['area'] = this._area;
-    data['isActive'] = this._isActive;
     data['tenantId'] = this._tenantId;
+    data['readingDate'] = this._readingDate;
+    data['meterNumber'] = this._meterNumber;
+    data['currentReading'] = this._currentReading;
+    data['previousReading'] = this._previousReading;
+    data['consumption'] = this._consumption;
+    data['ratePerUnit'] = this._ratePerUnit;
+    data['amount'] = this._amount;
+    data['seq'] = this._seq;
+    data['isActive'] = this._isActive;
+    data['remarks'] = this._remarks;
     data['isDeleted'] = this._isDeleted;
     data['deleterUserId'] = this._deleterUserId;
     data['deletionTime'] = this._deletionTime;
@@ -191,7 +184,6 @@ class BuildingModel {
     data['creationTime'] = this._creationTime;
     data['creatorUserId'] = this._creatorUserId;
     data['id'] = this._id;
-    data['permanentAddress'] = this._permanentAddress;
     return data;
   }
 }
