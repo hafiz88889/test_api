@@ -1,3 +1,3 @@
 class AppConstant{
-  static const String Base_Api_Url="https://bmanage.xyz/api/";
+  static const String Base_Api_Url="https://fakestoreapi.com/";
 }

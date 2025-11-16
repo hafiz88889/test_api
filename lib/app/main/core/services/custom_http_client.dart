@@ -19,18 +19,21 @@ class CustomHttpClient{
     }
   }
 
-  Future<dynamic> get({required uri, token})async{
+  Future<dynamic> get({required uri,  token})async{
     final response= await http.get(Uri.parse(uri),
       headers: await getHeaders(authToken: token),
     );
     return _handleResponse(response);
   }
-  Future<dynamic> post({required uri, required dynamic data, token})async{
-    final response= await http.post(Uri.parse(uri),
+  Future<dynamic> post({required uri, required dynamic data, token}) async {
+    final response = await http.post(
+      Uri.parse(uri),
       headers: await getHeaders(authToken: token),
+      body: jsonEncode(data), // << ei line ta add koro
     );
     return _handleResponse(response);
   }
+
   Future<dynamic> put({required uri, token})async{
     final response= await http.put(Uri.parse(uri),
       headers: await getHeaders(authToken: token),
