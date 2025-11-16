@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_bloc.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_event.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_state.dart';

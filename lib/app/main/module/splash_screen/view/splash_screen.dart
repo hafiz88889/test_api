@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
       body: SafeArea(child: Column(children: [
         ElevatedButton(onPressed: (){
           context.go(Routes.PRODUCT_VIEW);
-        }, child: Text("Product"))
+        }, child: Text("Product Page"))
       ],)),
     );
   }
