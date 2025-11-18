@@ -11,9 +11,18 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(child: Column(children: [
-        ElevatedButton(onPressed: (){
-          context.go(Routes.PRODUCT_VIEW);
-        }, child: Text("Product Page"))
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(12)),
+                minimumSize: Size(double.infinity, 55)
+              ),
+              onPressed: (){
+            context.go(Routes.PRODUCT_VIEW);
+          }, child: Text("Product Page",style: TextStyle(color: Colors.white),)),
+        )
       ],)),
     );
   }
