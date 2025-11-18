@@ -33,20 +33,20 @@ class ProductView extends StatelessWidget {
                         IconButton(onPressed: (){
                         }, icon: Icon(Icons.arrow_back),),
                         // Back Button
-                        InkWell(
-                          onTap: () => Navigator.pop(context),
-                          borderRadius: BorderRadius.circular(12),
-                          child: Container(
-                            width: 44,
-                            height: 44,
-                            alignment: Alignment.center,
-                            child: const Icon(
-                              Icons.arrow_back,
-                              color: Colors.white,
-                              size: 24,
-                            ),
-                          ),
-                        ),
+                        // InkWell(
+                        //   onTap: () => Navigator.pop(context),
+                        //   borderRadius: BorderRadius.circular(12),
+                        //   child: Container(
+                        //     width: 44,
+                        //     height: 44,
+                        //     alignment: Alignment.center,
+                        //     child: const Icon(
+                        //       Icons.arrow_back,
+                        //       color: Colors.white,
+                        //       size: 24,
+                        //     ),
+                        //   ),
+                        // ),
 
                         // Title - wrapped with Expanded
                         Expanded(
