@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_bloc.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_event.dart';
 import 'package:test_new_app/app/main/module/product_page/bloc/product_state.dart';
+import 'package:test_new_app/app/route/app_path.dart';
 
 import '../../../core/model/request_body.dart';
 
@@ -28,7 +30,8 @@ class ProductView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back),),
+                        IconButton(onPressed: (){
+                        }, icon: Icon(Icons.arrow_back),),
                         // Back Button
                         // InkWell(
                         //   onTap: () => Navigator.pop(context),
