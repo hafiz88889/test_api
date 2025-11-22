@@ -137,106 +137,100 @@ class ProductView extends StatelessWidget {
                 child: CircularProgressIndicator()
               ),);
           } else if (state.productStatus == ProductStatus.success) {
-            return Container(
-              padding: EdgeInsets.only(top: 10),
-              decoration: const BoxDecoration(
-                color: Color(0xFFF5F7FA),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: state.productList?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        final productItem = state.productList![index];
-                        return Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 10,
-                          ),
-                          margin: EdgeInsets.symmetric(horizontal: 12, vertical: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.3),
-                                blurRadius: 5,
-                                spreadRadius: 3,
-                                offset: const Offset(3, 3),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    // Avatar
-                                    const SizedBox(width: 15),
-                                    // Name and ID
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "${productItem.price??0}",
-                                            style: const TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xFF170D0D),
-                                            ),
-                                          ),
-                                          const SizedBox(height: 6),
-                                        ],
-                                      ),
-                                    ),
-                                    // Edit Button
-
-                                  ],
-                                ),
-                                const SizedBox(height: 20),
-                                GridView.count(
-                                  crossAxisCount: 2,
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  crossAxisSpacing: 12,
-                                  mainAxisSpacing: 12,
-                                  childAspectRatio: 2.6,
-
-                                  children: [
-                                    _buildInfoBox("Product Name", "${productItem.title}"),
-                                    _buildInfoBox("Description", "${productItem.description}"),
-                                    _buildInfoBox("Price", "${productItem.price}"),
-                                    _buildInfoBox("Review", "${productItem.rating}"),
-
-                                  ],
-                                ),
-
-                              ]
-                          ),
-                        );
-                      },
-                    ),
+            return   ListView.builder(
+              itemCount: state.productList?.length ?? 0,
+              itemBuilder: (context, index) {
+                final productItem = state.productList![index];
+                return Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 10,
                   ),
-                  // customPagination(
-                  //     context: context,
-                  //     textColor: Theme.of(context).primaryColor,
-                  //     totalCount: state.totalCount??0,
-                  //     showCount: "${state.totalCount == 0 ? 0 : state.requestBody?.skipCount == 0 ? 1 : state.requestBody!.skipCount + 1}-${state.electricMeterList!.length < state.requestBody!.maxResultCount ? state.requestBody!.skipCount + state.electricMeterList!.length : state.requestBody!.skipCount + state.requestBody!.maxResultCount}",
-                  //     requestBody: state.requestBody!,
-                  //     dataReLoad: (RequestBody requestBody) {
-                  //       context.read<ElectricMeterBloc>().add(LoadElectricMeter(
-                  //         requestBody: requestBody,
-                  //       ));
-                  //     }),
-                ],
-              ),
+                  margin: EdgeInsets.symmetric(horizontal: 12, vertical: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 5,
+                        spreadRadius: 3,
+                        offset: const Offset(3, 3),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.network("${productItem.image}",height: MediaQuery.of(context).size.height/4,width: double.infinity,),
+                        const SizedBox(height: 10,),
+                        Text("${productItem.title}",style: TextStyle(
+                            fontSize: 24,color: Colors.black,fontWeight: FontWeight.w700),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 8,),
+                        Row(
+                          children: [
+                            Text("Price :${productItem.price}",style: TextStyle(
+                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w600),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,),
+                            Text("Reting :${productItem.rating}",style: TextStyle(
+                                fontSize: 16,color: Colors.yellow,fontWeight: FontWeight.w600),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,),
+                          ],
+                        ),
+                        // Row(
+                        //   children: [
+                        //     // Avatar
+                        //     const SizedBox(width: 15),
+                        //     // Name and ID
+                        //     Expanded(
+                        //       child: Column(
+                        //         crossAxisAlignment:
+                        //         CrossAxisAlignment.start,
+                        //         children: [
+                        //           Text(
+                        //             "${productItem.price??0}",
+                        //             style: const TextStyle(
+                        //               fontSize: 22,
+                        //               fontWeight: FontWeight.w600,
+                        //               color: Color(0xFF170D0D),
+                        //             ),
+                        //           ),
+                        //           const SizedBox(height: 6),
+                        //         ],
+                        //       ),
+                        //     ),
+                        //     // Edit Button
+                        //
+                        //   ],
+                        // ),
+                        const SizedBox(height: 20),
+                        GridView.count(
+                          crossAxisCount: 2,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: 2.6,
+
+                          children: [
+                            _buildInfoBox("Product Name", "${productItem.title}"),
+                            _buildInfoBox("Description", "${productItem.description}"),
+                            _buildInfoBox("Price", "${productItem.price}"),
+                            _buildInfoBox("Review", "${productItem.rating}"),
+
+                          ],
+                        ),
+
+                      ]
+                  ),
+                );
+              },
             );
           } else if (state.productStatus == ProductStatus.error) {
             return Center(child: Text(state.error ?? "Something went wrong"));

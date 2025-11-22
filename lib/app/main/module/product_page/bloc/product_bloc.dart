@@ -13,7 +13,6 @@ import '../services/product_services.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState>{
   ProductServices productServices =ProductServices(
-
     http: CustomHttpClient(),
     url: "${AppConstant.Base_Api_Url}",);
   ProductBloc():super(ProductState()){
