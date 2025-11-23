@@ -20,12 +20,11 @@ class AppRouter {
         path: Routes.SPLASH_SCREEN,
         builder: (context, state) => const SplashScreen(),
       ),
-
       GoRoute(
         path: Routes.PRODUCT_VIEW,
         builder: (context, state) {
           return BlocProvider(
-            create: (_) => ProductBloc(),
+            create: (context)=>ProductBloc(),
             child: const ProductView(),
           );
         },
